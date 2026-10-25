@@ -1,0 +1,235 @@
+{
+	"info": {
+		"_postman_id": "238b64eb-43a2-4b55-856a-aadd3ddbb28e",
+		"name": "API Workshop 2026",
+		"description": "ACM API Workshop 2026. Part 1 calls ACM's public API. Part 2 calls the Flask backend you run on your own laptop (python app.py).",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Part 1 - ACM API",
+			"item": [
+				{
+					"name": "Confirm API",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.scuacm.com",
+							"protocol": "https",
+							"host": [
+								"api",
+								"scuacm",
+								"com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Token",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.scuacm.com/v1/token?key={{key}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"scuacm",
+								"com"
+							],
+							"path": [
+								"v1",
+								"token"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								}
+							]
+						}
+					},
+					"response": [],
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"// Save response to data variable",
+									"let data = pm.response.json();",
+									"",
+									"// Set the token value to the collection variable",
+									"pm.collectionVariables.set(\"token\", data.token);"
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Get Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.scuacm.com/v1/data",
+							"protocol": "https",
+							"host": [
+								"api",
+								"scuacm",
+								"com"
+							],
+							"path": [
+								"v1",
+								"data"
+							]
+						},
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Part 2 - Our Backend",
+			"item": [
+				{
+					"name": "Hello",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/hello",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"hello"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add (query params)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/add?a=2&b=3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"add"
+							],
+							"query": [
+								{
+									"key": "a",
+									"value": "2"
+								},
+								{
+									"key": "b",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Firebase Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/firebase/get",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"firebase",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Firebase Set (JSON body)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/firebase/set",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"firebase",
+								"set"
+							]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"current_value\": 42,\n  \"history\": [\n    1,\n    2,\n    42\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACM Token (through our proxy)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/acm-token",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"acm-token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "key",
+			"value": ""
+		},
+		{
+			"key": "token",
+			"value": ""
+		},
+		{
+			"key": "baseUrl",
+			"value": "http://127.0.0.1:8080"
+		}
+	]
+}
