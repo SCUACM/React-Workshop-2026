@@ -36,11 +36,13 @@ Follow-along tutorial for ACM's API workshop. This builds on the React and Fireb
    3. You should see `(venv)` at the start of your terminal from here on out. Whenever you run anything, make sure it's there
 8. Install the packages listed in `requirements.txt` (pip is the Python package manager)
    - `pip install -r requirements.txt`
-9. **(Optional) Firebase:** if you did the Firebase workshop, copy your `credentials.json` into the `backend` folder. Never commit this file! It's already in `backend/.gitignore`
-10. If you want to still do the Firebase activity , you can follow these steps :
-11. Create their own Firebase project with their personal Gmail.
-12. Go to Project settings → Service accounts → Generate new private key. A .json file downloads.
-Rename it to credentials.json and put it in your folder.
+7. **(Optional) Firebase:** if you did the Firebase workshop, copy `credentials.json` from last week's `backend` folder into this one. If you didn't, skip this step and watch the demo. Everything except the two Firebase requests still works!
+   - **Want to set it up yourself? (about 10 min)**
+     - **Create a Firebase project** at the [Firebase console](https://console.firebase.google.com) using your **personal Gmail** (SCU accounts get blocked)
+     - **Create the database:** Firestore Database → Create database → choose **Standard edition**, **nam5**, and **Test mode**
+     - **Get the key:** ⚙️ Project settings → Service accounts → **Generate new private key**. Rename the downloaded file to exactly `credentials.json` and drag it into the `backend` folder, next to `app.py`
+     - **Restart the server** (`Ctrl + C`, then `python app.py`). You should see `Firebase connected!`
+   - ⚠️ `credentials.json` is a secret key. Never commit it or share it! It's already in `backend/.gitignore`
 
 ---
 
