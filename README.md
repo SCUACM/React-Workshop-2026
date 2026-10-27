@@ -37,6 +37,10 @@ Follow-along tutorial for ACM's API workshop. This builds on the React and Fireb
 8. Install the packages listed in `requirements.txt` (pip is the Python package manager)
    - `pip install -r requirements.txt`
 9. **(Optional) Firebase:** if you did the Firebase workshop, copy your `credentials.json` into the `backend` folder. Never commit this file! It's already in `backend/.gitignore`
+10. If you want to still do the Firebase activity , you can follow these steps :
+11. Create their own Firebase project with their personal Gmail.
+12. Go to Project settings → Service accounts → Generate new private key. A .json file downloads.
+Rename it to credentials.json and put it in your folder.
 
 ---
 
