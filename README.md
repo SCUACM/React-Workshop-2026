@@ -25,16 +25,18 @@ Follow-along tutorial for ACM's API workshop. This builds on the React and Fireb
       git checkout api-postman
 2. Unzip it and open the folder in VSCode. You should see the `backend` and `ReactWorkshop` folders
 3. Open the terminal in VSCode (`Ctrl + ~`) and go into the backend folder: `cd backend`
-4. Create a Python virtual environment, which keeps the packages you install local to this folder
+4. If you don't have VSCode , thats fine! just type in this command in your terminal: cd Downloads/React-Workshop-2026-api-postman/backend
+5. It is better to download VS code though, most CS kids have this anyways! Download here: https://code.visualstudio.com
+6. Create a Python virtual environment, which keeps the packages you install local to this folder
    1. Mac/Linux: `python3 -m venv venv`
    2. Windows: `py -m venv venv`
-5. Activate it
+7. Activate it
    1. Mac/Linux: `source venv/bin/activate`
    2. Windows: `.\venv\Scripts\activate`
    3. You should see `(venv)` at the start of your terminal from here on out. Whenever you run anything, make sure it's there
-6. Install the packages listed in `requirements.txt` (pip is the Python package manager)
+8. Install the packages listed in `requirements.txt` (pip is the Python package manager)
    - `pip install -r requirements.txt`
-7. **(Optional) Firebase:** if you did the Firebase workshop, copy your `credentials.json` into the `backend` folder. Never commit this file! It's already in `backend/.gitignore`
+9. **(Optional) Firebase:** if you did the Firebase workshop, copy your `credentials.json` into the `backend` folder. Never commit this file! It's already in `backend/.gitignore`
 
 ---
 
