@@ -112,9 +112,13 @@ Postman isn't just for other people's APIs. It's how developers test their own. 
 6. **(Firebase people)** Open your Firebase console and check the `clicker/counter` document. It changed, and you never touched the React app
 
 <!-- SCREENSHOT TODO: Firebase console showing clicker > counter with current_value = 42 -->
-![Firebase Updated](images/firebase_updated.png)
-
-> **Why does this work without CORS errors?** CORS is a rule that *browsers* enforce. Our backend only allows `http://localhost:5173` (the React app), but Postman isn't a browser, so CORS doesn't apply to it.
+7. (Optional) Firebase: only if you did the Firebase workshop. Skip this step otherwise. Everything except the two Firebase requests in Part 2 still works.
+   1. Find your `credentials.json` file from last week. It's in last week's project folder, inside `backend`
+      - **Can't find it?** Go to the [Firebase console](https://console.firebase.google.com), open your project, then ⚙️ **Project settings** → **Service accounts** → **Generate new private key**. Rename the downloaded file to exactly `credentials.json`
+   2. Drag `credentials.json` onto the `backend` folder in VSCode's sidebar. It should sit right next to `app.py`
+   3. Double-check the name is exactly `credentials.json` (not `credentials.json.json`)
+   4. When you run `python app.py` later, you'll see `Firebase connected!`. If you see `No credentials.json found` instead, check steps 2–3 and restart the server (`Ctrl + C`, then `python app.py`)
+   - ⚠️ This file is a secret key. Never commit it or share it! It's already listed in `backend/.gitignore`, so git will ignore it
 
 ---
 
