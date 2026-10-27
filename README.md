@@ -20,8 +20,8 @@ Follow-along tutorial for ACM's API workshop. This builds on the React and Fireb
 
 1. Download this branch (`api-postman`) as a zip by clicking the green `Code` button and selecting `Download ZIP`
    1. If you're comfortable with GitHub, clone the repo and switch to this branch: `git checkout api-postman`
-   2. git clone -b api-postman https://github.com/SCUACM/React-Workshop-2026.git
-      cd React-Workshop-2026
+   2. git clone -b api-postman https://github.com/SCUACM/React-Workshop-2026.git |
+      cd React-Workshop-2026 |
       git checkout api-postman
 2. Unzip it and open the folder in VSCode. You should see the `backend` and `ReactWorkshop` folders
 3. Open the terminal in VSCode (`Ctrl + ~`) and go into the backend folder: `cd backend`
